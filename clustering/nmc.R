@@ -13,7 +13,7 @@ print(paste0("Protein length: ", protein_length, "..."))
 
 
 # Read file and select for target columns, remove rows with duplicate sample name and mutation_ID
-Gene_Data <- read.delim("Clustering/data/cosmic_LI_AC_filtered.tsv") %>%
+Gene_Data <- read.delim("data/cosmic_LI_AC_filtered.tsv") %>%
   filter(MUTATION_DESCRIPTION == "missense_variant" & GENE_SYMBOL == gene_name) %>%
   distinct(SAMPLE_NAME, GENOMIC_MUTATION_ID, .keep_all = TRUE) %>%
   dplyr::select(SAMPLE_NAME, GENOMIC_MUTATION_ID, MUTATION_AA)
